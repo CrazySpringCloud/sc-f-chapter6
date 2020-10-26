@@ -9,4 +9,13 @@ spring:
       label: main
       profile: dev
       # 指明配置服务中心的网址(即config-server的地址)
-      uri: http://localhost:8888/
+      # uri: http://localhost:8888/
+      discovery:
+        # 是从配置中心读取文件
+        enabled: true
+        # 配置中心的servieId，即服务名
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8889/eureka/
