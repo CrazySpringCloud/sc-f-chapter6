@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: localhost
+    # 此处端口号不要写成 15672，15672是rabbitmq的管理页面的端口，不是数据传输的端口
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
